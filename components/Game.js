@@ -45,10 +45,13 @@ export default class Game extends Component {
             })
 
             this.state.io.on('autoWinGame', (data)=>{
-                this.setState({status:'none'}) 
-                this.setState({data: data})
-                this.setState({type: x})
-                ToastAndroid.show('Your opponent has left the room \n You win!', ToastAndroid.SHORT)
+                
+               ToastAndroid.show('Your opponent has left the room \n You win!', ToastAndroid.SHORT)
+               setTimeout(() => {
+                    this.setState({status:'none'}) 
+                    this.setState({data: data})
+                    this.setState({type: x})
+                }, 2000)
                 
             })
 
